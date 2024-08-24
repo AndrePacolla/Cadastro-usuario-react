@@ -15,6 +15,12 @@ function Home() {
     name: 'Maine',
     age: '33',
     email: 'maine@email.com'
+  },
+  {
+    id: '8686867576443',
+    name: 'Belinha',
+    age: '5',
+    email: 'belinha@email.com'
   }
 
 ]
@@ -23,7 +29,7 @@ function Home() {
     
     <div className='container'>
       <form>
-      <h1>Cadastro de Usuário</h1>
+      <h1>Cadastro de Usuários</h1>
       <input name='nome' type='text'/>
       <input name='idade' type='number'/>
       <input name='e-mail' type='email'/>
@@ -32,7 +38,7 @@ function Home() {
 
 
 
-      {users.map(user => (
+      {users.map((user) => (
           <div key = {user.id}>
              <div>
                <p>Nome: {user.name}</p>
@@ -46,9 +52,6 @@ function Home() {
           </div>
 
       ))} 
-
- 
-  
 
     </div>
   )
