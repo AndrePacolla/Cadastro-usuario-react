@@ -44,3 +44,20 @@ form{
       padding-left: 20px;
     }
 }
+
+.card{
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  background-color: #626085;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(197, 197, 197);
+
+  & button{
+    background-color: transparent;
+    border: none;
+
+  }
+}

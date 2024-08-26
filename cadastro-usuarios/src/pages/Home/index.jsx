@@ -39,7 +39,7 @@ function Home() {
 
 
       {users.map((user) => (
-          <div key = {user.id}>
+          <div key = {user.id} className='card'>
              <div>
                <p>Nome: {user.name}</p>
                <p>Idade: {user.age}</p>
