@@ -55,6 +55,18 @@ form{
   border-radius: 10px;
   border: 1px solid rgb(197, 197, 197);
 
+ 
+  & p{
+    color: white;
+    font-weight: bold;
+
+    & span{
+      color: rgb(32, 30, 30);
+      font-weight: normal;
+      padding-left: 8px;
+  
+    }
+  }
   & button{
     background-color: transparent;
     border: none;
