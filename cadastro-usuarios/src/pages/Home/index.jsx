@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './style.css'
 import Trash from '../../assets/trash.svg'
 import api from '../../services/api'
@@ -6,15 +6,16 @@ import api from '../../services/api'
 
 function Home() {
 
+  const inputName = useRef();
+  const inputAge = useRef();
+  const inputEmail = useRef();
+  
   const [users, setUsers] = useState([]);
 
    async function getUsers(){
     const usersFromApi = await api.get('/usuarios')
-
-    setUsers( usersFromApi.data)
+    setUsers(usersFromApi.data)
    }
-
-
 
    useEffect(() => {
     getUsers()
@@ -27,9 +28,9 @@ function Home() {
     <div className='container'>
       <form>
       <h1>Cadastro de Usuários</h1>
-      <input name='nome' type='text' placeholder='nome ...'/>
-      <input name='idade' type='number' placeholder='idade ...'/>
-      <input name='e-mail' type='email' placeholder='e-mail ...'/>
+      <input name='nome' type='text' placeholder='nome ...' ref={inputName}/>
+      <input name='idade' type='number' placeholder='idade ...'ref={inputAge}/>
+      <input name='e-mail' type='email' placeholder='e-mail ...'ref={inputEmail}/>
       <button type='button'>Cadastrar</button>
       </form>
 
