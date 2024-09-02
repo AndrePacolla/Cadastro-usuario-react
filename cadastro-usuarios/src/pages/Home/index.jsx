@@ -17,6 +17,11 @@ function Home() {
     setUsers(usersFromApi.data)
    }
 
+   async function deleteUsers(id){
+     await api.delete(`/usuarios/${id}`)
+     getUsers()
+   }
+
    async function createUsers(){
 
     await api.post('/usuarios', {
@@ -54,7 +59,7 @@ function Home() {
                <p>E-mail:<span>{user.email}</span></p>
              </div>
        
-             <button>
+             <button onClick={() => deleteUsers(user.id)}>
                <img src={Trash}/>
              </button>
           </div>
